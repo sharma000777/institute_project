@@ -1,0 +1,1275 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Admin_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-bordered" data-assets-path="../UserLogin_Content/assets/" data-template="vertical-menu-template-bordered" data-style="light">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="description" content="Start your development with a Dashboard for Bootstrap 5" />
+    <meta name="keywords" content="dashboard, material, material design, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+    <link rel="icon" type="image/x-icon" href="../Images/fav_icon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/fonts/remixicon/remixicon.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/fonts/flag-icons.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/node-waves/node-waves.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/css/rtl/theme-bordered.css?v=7" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/css/demo.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/flatpickr/flatpickr.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/@form-validation/form-validation.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/bs-stepper/bs-stepper.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/select2/select2.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/dropzone/dropzone.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/css/pages/page-auth.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/animate-css/animate.css" />
+    <link rel="stylesheet" href="../UserLogin_Content/assets/vendor/libs/sweetalert2/sweetalert2.css" />
+
+
+    <script src="../UserLogin_Content/assets/vendor/js/helpers.js"></script>
+    <script src="../UserLogin_Content/assets/js/config.js"></script>
+
+    <!-- Datatable New Version Start-->
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <!-- DataTables Buttons CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.bootstrap5.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.0/css/responsive.bootstrap5.css" />
+
+    <!-- DataTables Responsive CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+
+    <!-- Datatable New Version End-->
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <style>
+        .table th {
+            font-size: 0.9rem;
+            color: #544f5a;
+            font-weight: 600;
+            /*background: #0931c1 !important;
+            opacity: 0.7 !important;
+            color:white;*/
+        }
+
+        table.dataTable.nowrap th {
+            text-align: center;
+        }
+
+        .table td {
+            font-size: 0.85rem;
+        }
+
+        table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
+            text-align: left;
+        }
+
+        .table.table.dataTable {
+            width: 100% !important;
+            text-align: center;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            background: #15a3b2 !important;
+            color: white !important;
+        }
+
+            .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+                background: #0931c1 !important;
+                color: white !important;
+            }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            background: White !important;
+            color: black !important;
+            border-color: #d1d1d9 !important;
+            margin: 0px 3px !important;
+            padding: .3em 0.9em !important;
+        }
+
+            .dataTables_wrapper .dataTables_paginate .paginate_button:not(.current):not(.disabled):hover {
+                background: #0931c1 !important;
+                color: white !important;
+                border-color: #d1d1d9 !important;
+            }
+
+        thead, tbody, tfoot, tr, td, th {
+            border-color: #e1e1e1 !important;
+            border-style: solid;
+            border-width: 0;
+        }
+
+        table.dataTable.nowrap td {
+            word-wrap: break-word !important;
+            white-space: normal !important;
+            max-width: 20rem !important;
+        }
+
+        .container-xxl.container-p-y {
+    min-height: calc(100vh - 160px); /* navbar + footer height adjust */
+}
+
+        .notifyjs-corner {
+            z-index: 999999 !important;
+        }
+
+        .container .spinners {
+            margin-top: 50px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+            .container .spinners .spinner-block {
+                width: 125px;
+                text-align: center;
+                margin-right: 83px;
+            }
+
+                .container .spinners .spinner-block:nth-child(5n) {
+                    margin-right: 0px;
+                }
+
+                .container .spinners .spinner-block h2 {
+                    font-family: "Pacifico", cursive;
+                    font-size: 17px;
+                    color: #212121;
+                    margin-bottom: 20px;
+                }
+
+        /* YOU NEED THESE STYLES */
+        /* spinner style */
+        #spinner-div {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            background-color: rgb(255 255 255 / 64%);
+            justify-content: center;
+            align-items: center;
+            z-index: 1105;
+        }
+
+        .spinner-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .showSpinner {
+            display: flex !important;
+        }
+
+        .hideSpinner {
+            display: none !important;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+        .spinner {
+            position: relative;
+            width: 125px;
+            height: 125px;
+        }
+
+            .spinner:before, .spinner:after {
+                content: "";
+                display: block;
+                position: absolute;
+                border-width: 4px;
+                border-style: solid;
+                border-radius: 50%;
+            }
+
+        /* spinner-1 styles */
+        @-webkit-keyframes rotate-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @-webkit-keyframes anti-rotate-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        @keyframes anti-rotate-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(-360deg);
+            }
+        }
+
+        .spinner.spinner-1:before {
+            width: 90px;
+            height: 90px;
+            border-bottom-color: #034694;
+            border-right-color: #034694;
+            border-top-color: rgba(33, 33, 33, 0);
+            border-left-color: rgba(33, 33, 33, 0);
+            top: 0px;
+            left: 0px;
+            -webkit-animation: rotate-animation 1s linear 0s infinite;
+            animation: rotate-animation 1s linear 0s infinite;
+        }
+
+        .spinner.spinner-1:after {
+            width: 55.9px;
+            height: 55.9px;
+            border-bottom-color: #212121;
+            border-right-color: #212121;
+            border-top-color: rgba(33, 33, 33, 0);
+            border-left-color: rgba(33, 33, 33, 0);
+            top: 17.55px;
+            left: 17.55px;
+            -webkit-animation: anti-rotate-animation 0.85s linear 0s infinite;
+            animation: anti-rotate-animation 0.85s linear 0s infinite;
+        }
+
+        .trigger {
+            text-align: center;
+            padding: 7px 13px;
+            background: #3e3e3e;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            font-family: cursive;
+        }
+
+
+        @media screen and (max-width: 480px) {
+            #Title {
+                font-size: 0.7rem !important;
+            }
+        }
+
+        body {
+            /*            background: rgb(233, 234, 240) !important;
+*/ background: linear-gradient(178deg, #15a3b233, rgb(233, 234, 240)) !important;
+        }
+
+        .tox:not([dir=rtl]) .tox-statusbar__branding {
+            margin-left: 2ch;
+            display: none !important;
+        }
+
+        .table-responsive {
+            overflow-x: unset;
+        }
+
+        .form-control, .light-style .select2-container--default .select2-selection {
+            border-color: #91919196 !important;
+            border-width: 2px;
+        }
+
+            .form-control:not(:placeholder-shown) {
+                border-color: #15a3b2 !important;
+                border-width: 2px;
+            }
+
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: #15a3b2;
+        }
+
+        .daterangepicker .ranges li {
+            font-size: 16px;
+            padding: 11px 12px;
+            cursor: pointer;
+        }
+
+
+
+        [data-tooltip] {
+            --arrow-size: 5px;
+            position: relative;
+            z-index: 10;
+        }
+
+            /* Positioning and visibility settings of the tooltip */
+            [data-tooltip]:before,
+            [data-tooltip]:after {
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                left: 50%;
+                bottom: calc(100% + var(--arrow-size));
+                pointer-events: none;
+                transition: 0.2s;
+                will-change: transform;
+            }
+
+            /* The actual tooltip with a dynamic width */
+            [data-tooltip]:before {
+                content: attr(data-tooltip);
+                padding: 10px 18px;
+                min-width: 50px;
+                max-width: 300px;
+                width: max-content;
+                width: -moz-max-content;
+                border-radius: 6px;
+                font-size: 14px;
+                background-color: rgba(59, 72, 80, 0.9);
+                background-image: linear-gradient(30deg, rgba(59, 72, 80, 0.44), rgba(59, 68, 75, 0.44), rgba(60, 82, 88, 0.44));
+                box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+                color: #fff;
+                text-align: center;
+                white-space: pre-wrap;
+                transform: translate(-50%, calc(0px - var(--arrow-size))) scale(0.5);
+            }
+
+            /* Tooltip arrow */
+            [data-tooltip]:after {
+                content: '';
+                border-style: solid;
+                border-width: var(--arrow-size) var(--arrow-size) 0px var(--arrow-size); /* CSS triangle */
+                border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
+                transition-duration: 0s; /* If the mouse leaves the element, 
+                              the transition effects for the 
+                              tooltip arrow are "turned off" */
+                transform-origin: top; /* Orientation setting for the
+                              slide-down effect */
+                transform: translateX(-50%) scaleY(0);
+            }
+
+            /* Tooltip becomes visible at hover */
+            [data-tooltip]:hover:before,
+            [data-tooltip]:hover:after {
+                visibility: visible;
+                opacity: 1;
+            }
+            /* Scales from 0.5 to 1 -> grow effect */
+            [data-tooltip]:hover:before {
+                transition-delay: 0.3s;
+                transform: translate(-50%, calc(0px - var(--arrow-size))) scale(1);
+            }
+            /* 
+  Arrow slide down effect only on mouseenter (NOT on mouseleave)
+*/
+            [data-tooltip]:hover:after {
+                transition-delay: 0.5s; /* Starting after the grow effect */
+                transition-duration: 0.2s;
+                transform: translateX(-50%) scaleY(1);
+            }
+        /*
+  That's it for the basic tooltip.
+
+  If you want some adjustability
+  here are some orientation settings you can use:
+*/
+
+        /* LEFT */
+        /* Tooltip + arrow */
+        [data-tooltip-location="left"]:before,
+        [data-tooltip-location="left"]:after {
+            left: auto;
+            right: calc(100% + var(--arrow-size));
+            bottom: 50%;
+        }
+
+        /* Tooltip */
+        [data-tooltip-location="left"]:before {
+            transform: translate(calc(0px - var(--arrow-size)), 50%) scale(0.5);
+        }
+
+        [data-tooltip-location="left"]:hover:before {
+            transform: translate(calc(0px - var(--arrow-size)), 50%) scale(1);
+        }
+
+        /* Arrow */
+        [data-tooltip-location="left"]:after {
+            border-width: var(--arrow-size) 0px var(--arrow-size) var(--arrow-size);
+            border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
+            transform-origin: left;
+            transform: translateY(50%) scaleX(0);
+        }
+
+        [data-tooltip-location="left"]:hover:after {
+            transform: translateY(50%) scaleX(1);
+        }
+
+
+
+        /* RIGHT */
+        [data-tooltip-location="right"]:before,
+        [data-tooltip-location="right"]:after {
+            left: calc(100% + var(--arrow-size));
+            bottom: 50%;
+        }
+
+        [data-tooltip-location="right"]:before {
+            transform: translate(var(--arrow-size), 50%) scale(0.5);
+        }
+
+        [data-tooltip-location="right"]:hover:before {
+            transform: translate(var(--arrow-size), 50%) scale(1);
+        }
+
+        [data-tooltip-location="right"]:after {
+            border-width: var(--arrow-size) var(--arrow-size) var(--arrow-size) 0px;
+            border-color: transparent rgba(55, 64, 70, 0.9) transparent transparent;
+            transform-origin: right;
+            transform: translateY(50%) scaleX(0);
+        }
+
+        [data-tooltip-location="right"]:hover:after {
+            transform: translateY(50%) scaleX(1);
+        }
+
+
+
+        /* BOTTOM */
+        [data-tooltip-location="bottom"]:before,
+        [data-tooltip-location="bottom"]:after {
+            top: calc(100% + var(--arrow-size));
+            bottom: auto;
+        }
+
+        [data-tooltip-location="bottom"]:before {
+            transform: translate(-50%, var(--arrow-size)) scale(0.5);
+        }
+
+        [data-tooltip-location="bottom"]:hover:before {
+            transform: translate(-50%, var(--arrow-size)) scale(1);
+        }
+
+        [data-tooltip-location="bottom"]:after {
+            border-width: 0px var(--arrow-size) var(--arrow-size) var(--arrow-size);
+            border-color: transparent transparent rgba(55, 64, 70, 0.9) transparent;
+            transform-origin: bottom;
+        }
+
+        html, body {
+    height: 100%;
+}
+
+.layout-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.layout-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+}
+
+.content-footer {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.id-container {
+    padding-bottom: 80px; /* footer ke liye space */
+}
+    </style>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="layout-wrapper layout-content-navbar  ">
+            <div class="layout-container">
+                <!-- Menu -->
+
+                <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+
+
+                    <div class="app-brand demo ">
+                        <a href="Default.aspx" class="app-brand-link">
+                            <span class="app-brand-logo demo me-1">
+                                <span style="color: var(--bs-primary);">
+                                    <img src="../Images/logo.png" class="img-responsive" alt="logo" title="Logo" style="width: 3rem" />
+                                </span>
+                            </span>
+                            <span class="app-brand-text demo menu-text fw-semibold ms-2">Admin</span>
+                        </a>
+
+                        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                            <i class="menu-toggle-icon d-xl-block align-middle"></i>
+                        </a>
+                    </div>
+
+                    <div class="menu-inner-shadow"></div>
+
+
+
+                    <ul class="menu-inner py-1">
+                        <!-- Dashboards -->
+
+                        <li class="menu-item" runat="server" id="menuDashboard">
+    <a href="Default.aspx" class="menu-link">
+        <i class="menu-icon tf-icons ri-home-smile-line"></i>
+        <div>Dashboards</div>
+    </a>
+</li>
+
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Master">Master &amp; Setting</span>
+                        </li>
+                        <li class="menu-item MasterTour">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon ri-list-settings-line"></i>
+                                <div data-i18n="Master">Master</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item ">
+                                    <a href="Institute.aspx" class="menu-link">
+                                        <div data-i18n="Create Institute">Create Institute</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Session.aspx" class="menu-link">
+                                        <div data-i18n="Create Session">Create Session</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Course.aspx" class="menu-link">
+                                        <div data-i18n="Create Course">Create Course</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Batch.aspx" class="menu-link">
+                                        <div data-i18n="Create Batch">Create Batch</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Reason.aspx" class="menu-link" >
+                                        <div data-i18n="Create Reason for Not Being Enrolled" >Create Reason for Not Being Enrolled</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Contact_Media.aspx" class="menu-link" >
+                                        <div data-i18n="Create Contact Media" >Create Contact Media</div>
+                                    </a>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Student's Enquiry">Student's Enquiry</span>
+                        </li>
+                       <li class="menu-item" runat="server" id="menuEnquiry">
+<a href="Enquiry.aspx" class="menu-link">
+<i class="menu-icon tf-icons ri-group-3-line"></i>
+<div>Enquiry</div>
+</a>
+</li>
+                       <li class="menu-item" runat="server" id="menuFollowUp">
+<a href="Follow_Up.aspx" class="menu-link">
+<i class="menu-icon tf-icons ri-user-search-line"></i>
+<div>Follow Up</div>
+</a>
+</li>
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Students Section">Students Section</span>
+                        </li>
+                       <li class="menu-item" runat="server" id="menuAdmission">
+<a href="Add_Student_Admission.aspx" class="menu-link">
+<i class="menu-icon tf-icons ri-graduation-cap-line"></i>
+<div>Take Admission</div>
+</a>
+</li>
+
+                         <li class="menu-item">
+     <a href="Import_Student.aspx" class="menu-link">
+         <i class="menu-icon tf-icons ri-graduation-cap-line"></i>
+         <div data-i18n="Import_Student">Import_Student</div>
+     </a>
+ </li>
+
+                        <li class="menu-item">
+                            <a href="Student_Admission.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-group-line"></i>
+                                <div data-i18n="All Student">All Student</div>
+                            </a>
+                        </li>
+
+                         <li class="menu-item">
+     <a href="Student_IDCard_Batch.aspx" class="menu-link">
+         <i class="menu-icon tf-icons ri-group-line"></i>
+         <div data-i18n="Generate Id_Card">Generate Id_Card </div>
+     </a>
+ </li>
+
+                        <li class="menu-item MasterTour" runat="server" id="menuMaster">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                <i class="menu-icon ri-eye-2-line"></i>
+                                <div data-i18n="View Student">View Student</div>
+                            </a>
+                            <ul class="menu-sub">
+                                <li class="menu-item ">
+                                    <a href="Student_Profile.aspx" class="menu-link">
+                                        <div data-i18n="Profile">Profile</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Student_Batch.aspx" class="menu-link">
+                                        <div data-i18n="Batch Info">Batch Info</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Student_Paid_Installment.aspx" class="menu-link">
+                                        <div data-i18n="Paid Installment">Paid Installment</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item ">
+                                    <a href="Student_Dues_Installment.aspx" class="menu-link">
+                                        <div data-i18n="Dues Installment">Dues Installment</div>
+                                    </a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="Add_Student_Attandance.aspx" class="menu-link">
+                                        
+                                        <div data-i18n="Add Attandance">Add Attandance</div>
+                                    </a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="Student_Attandance.aspx" class="menu-link">
+                                     
+                                        <div data-i18n="View Attandance">View Attandance</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+    <a href="Report_Certificate.aspx" class="menu-link">
+        <i class="menu-icon ri-award-line"></i>
+        <div>Bulk Certificates</div>
+    </a>
+</li>
+
+
+                                <li class="menu-item">
+    <a href="StudentDueFees.aspx" class="menu-link">
+        Student Due Fees Report
+    </a>
+</li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Fee, Dues & Paid Installment">Fee, Dues & Paid Installment</span>
+                        </li>
+                        <li class="menu-item AssignToVendor">
+                            <a href="Student_Fee.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-money-rupee-circle-line"></i>
+                                <div data-i18n="Student Fee">Student Fee</div>
+                            </a>
+                        </li>
+                        <li class="menu-item AssignToVendor">
+                            <a href="Dues_Installment.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-hand-coin-line"></i>
+                                <div data-i18n="Next Dues Installment">Next Dues Installment</div>
+                            </a>
+                        </li>
+                        <li class="menu-item AssignToVendor">
+                            <a href="Paid_Installment.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-verified-badge-line"></i>
+                                <div data-i18n="Paid Installment">Paid Installment</div>
+                            </a>
+                        </li>
+                        <li class="menu-item AssignToVendor">
+                            <a href="Dues_Notified.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-notification-2-line"></i>
+                                <div data-i18n="Upcoming Dues Notified">Upcoming Dues Notified</div>
+                            </a>
+                        </li>
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Employee Section">Employee Section</span>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="Department.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-building-4-line"></i>
+                                <div data-i18n="Create Department">Create Department</div>
+                            </a>
+                        </li>
+                        <li class="menu-item ">
+                            <a href="Designation.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-archive-stack-line"></i>
+                                <div data-i18n="Create Designation">Create Designation</div>
+                            </a>
+                        </li>
+                       <li class="menu-item" runat="server" id="menuEmployee">
+<a href="Employee.aspx" class="menu-link">
+<div>Add Employee</div>
+</a>
+</li>
+                        <li class="menu-item AssignToVendor">
+                            <a href="Employee_Salary.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-wallet-line"></i>
+                                <div data-i18n="Employee Salary">Employee Salary</div>
+                            </a>
+                        </li>
+                            <li class="menu-item ">
+                                    <a href="Add_Employee_Attandance.aspx" class="menu-link">
+                                        <i class="menu-icon ri-checkbox-circle-line"></i>
+                                        <div data-i18n="Add Attandance">Add Attandance</div>
+                                    </a>
+                                </li>
+                                 <li class="menu-item ">
+                                    <a href="Employee_Attandance.aspx" class="menu-link">
+                                         <i class="menu-icon  ri-clipboard-line"></i>
+                                        <div data-i18n="View Attandance">View Attandance</div>
+                                    </a>
+                                </li>
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Operator Section">Operator Section</span>
+                        </li>
+                        <li class="menu-item AssignToVendor">
+                            <a href="Operator.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-user-add-line"></i>
+                                <div data-i18n="Create Operator">Create Operator</div>
+                            </a>
+                        </li>
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Expense Section">Expense Section</span>
+                        </li>
+                        <li class="menu-item AssignToVendor">
+                            <a href="Expense_Head.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-menu-add-line"></i>
+                                <div data-i18n="Add Expense Head">Add Expense Head</div>
+                            </a>
+                        </li>
+                       <li class="menu-item" runat="server" id="menuExpense">
+<a href="Expense.aspx" class="menu-link">
+<div>Add Expense</div>
+</a>
+</li>
+                        
+                        <li class="menu-header mt-7">
+                            <span class="menu-header-text" data-i18n="Reports">Reports</span>
+                        </li>
+                        <li class="menu-item RegisterVendor">
+                            <a href="Report_Enquiry.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-contacts-line"></i>
+                                <div data-i18n="Enquiry Report">Enquiry Report</div>
+                            </a>
+                        </li>
+                        <li class="menu-item RegisterVendor">
+                            <a href="Report_Admission.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-graduation-cap-line"></i>
+                                <div data-i18n="Admission Report">Admission Report</div>
+                            </a>
+                        </li>
+                        <li class="menu-item RegisterVendor">
+                            <a href="Report_Employee.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-group-line"></i>
+                                <div data-i18n="Employee Report">Employee Report</div>
+                            </a>
+                        </li>
+                        <li class="menu-item RegisterVendor">
+                            <a href="Report_Expense.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-git-close-pull-request-line"></i>
+                                <div data-i18n="Expense Report">Expense Report</div>
+                            </a>
+                        </li>
+                        <li class="menu-item RegisterVendor">
+                            <a href="Report_Payment.aspx" class="menu-link">
+                                <i class="menu-icon tf-icons ri-money-rupee-circle-line"></i>
+                                <div data-i18n="Collection Report">Collection Report</div>
+                            </a>
+                        </li>
+                       <li class="menu-item" runat="server" id="menuDueReport">
+<a href="Report_Due.aspx" class="menu-link">
+<i class="menu-icon tf-icons ri-hourglass-line"></i>
+<div>Due Report</div>
+</a>
+</li>
+
+
+                    </ul>
+
+
+
+                </aside>
+                <!-- / Menu -->
+                <!-- Layout container -->
+                <div class="layout-page">
+                    <!-- Navbar -->
+
+                    <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar" style="padding: 0px 20px;">
+
+                        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0   d-xl-none ">
+                            <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+                                <i class="ri-menu-fill ri-24px"></i>
+                            </a>
+                        </div>
+
+
+                        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+
+                            <ul class="navbar-nav flex-row align-items-center ms-auto">
+                                <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-4 me-xl-1">
+                                    <span id="Title" class="app-brand-text demo menu-text fw-semibold ms-2" style="background: linear-gradient(270deg, #44c2c7 0%, #0d6e78 100%) !important; -webkit-background-clip: text !important; -webkit-text-fill-color: transparent; font-size: 1.7rem;">Institute Management Software</span>
+                                </li>
+                            </ul>
+
+                            <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+
+
+                                <!-- User -->
+                                <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                    <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+                                        <div class="avatar avatar-online">
+                                            <img src="#" alt class="w-px-40 h-auto rounded-circle" id="MasterImage1">
+                                        </div>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end mt-3 py-2">
+                                        <li>
+                                            <a class="dropdown-item" href="Setting_MyAccount.aspx">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0 me-2">
+                                                        <div class="avatar avatar-online">
+                                                            <img src="#" alt class="w-px-40 h-auto rounded-circle" id="MasterImage2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-0 small"><span id="MasterName"></span></h6>
+                                                        <small class="text-muted">Admin</small>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="dropdown-divider"></div>
+                                        </li>
+                                        <%--<li>
+                                            <a class="dropdown-item" href="pages-profile-user.html">
+                                                <i class="ri-user-3-line ri-22px me-2"></i>
+                                                <span class="align-middle">My Profile</span>
+                                            </a>
+                                        </li>--%>
+                                        <li>
+                                            <a class="dropdown-item" href="Setting_MyAccount.aspx">
+                                                <i class="ri-settings-4-line ri-22px me-2"></i>
+                                                <span class="align-middle">Settings</span>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <div class="d-grid px-4 pt-2 pb-1">
+                                                <asp:LinkButton ID="BtnLogout" runat="server" CssClass="btn btn-danger d-flex" OnClick="BtnLogout_Click">
+                                                <small class="align-middle">Logout</small>
+                                                <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
+                                                </asp:LinkButton>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <!--/ User -->
+
+
+
+                            </ul>
+                        </div>
+
+
+                        <!-- Search Small Screens -->
+                        <div class="navbar-search-wrapper search-input-wrapper  d-none">
+                            <input type="text" class="form-control search-input container-xxl border-0" placeholder="Search..." aria-label="Search...">
+                            <i class="ri-close-fill search-toggler cursor-pointer"></i>
+                        </div>
+
+
+
+                    </nav>
+
+                    <!-- / Navbar -->
+
+                    <!-- Content wrapper -->
+                    <div class="content-wrapper">
+
+                        <!-- Content -->
+
+                        <div class="container-xxl flex-grow-1 container-p-y">
+
+                            <div id="spinner-div" class="pt-5 spinners">
+                                <div class="spinner-block">
+                                    <div class="spinner spinner-1"></div>
+                                </div>
+                            </div>
+
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <!-- Footer -->
+                        <footer class="content-footer footer bg-footer-theme">
+                            <div class="container-xxl">
+                                <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                                    <div class="text-body mb-2 mb-md-0">
+                                        ©
+                                        <script>
+                                            document.write(new Date().getFullYear())
+
+                                        </script>
+                                        , made with <span class="text-danger"><i class="tf-icons ri-heart-fill"></i></span>by <a href="https://csdtitsolution.com/" target="_blank" class="footer-link fw-medium">CSDT IT SOLUTION PVT LTD</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- / Footer -->
+
+
+                        <div class="content-backdrop fade"></div>
+                    </div>
+                    <!-- Content wrapper -->
+                </div>
+                <!-- / Layout page -->
+            </div>
+
+
+
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
+
+
+            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+            <div class="drag-target"></div>
+
+        </div>
+        <!-- / Layout wrapper -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+
+        <script>
+            // Get the current URL and extract page name with query parameters
+            var loc = window.location.href;
+            var fullFilename = loc.substring(loc.lastIndexOf('/') + 1); // Full filename including query parameters
+
+            // Get all menu items
+            var menuItems = document.querySelectorAll('.menu-item');
+
+            // Loop through menu items and remove 'active' class from each
+            menuItems.forEach(function (item) {
+                item.classList.remove('active');
+                // Remove 'open' class from menu item with submenu
+                var submenu = item.querySelector('.menu-sub');
+                if (submenu) {
+                    submenu.classList.remove('open');
+                }
+            });
+
+            // Find the menu item with a link matching the current page name and query parameters
+            menuItems.forEach(function (item) {
+                var link = item.querySelector('a');
+                if (link) {
+                    var linkHref = link.getAttribute('href');
+                    if (linkHref === fullFilename || linkHref.split('?')[0] === fullFilename.split('?')[0]) {
+                        item.classList.add('active');
+
+                        // Add 'active' class to the parent 'li' of submenu items
+                        var parentMenu = item.closest('.menu-sub');
+                        if (parentMenu) {
+                            var parentMenuItem = parentMenu.parentNode;
+                            parentMenuItem.classList.add('active');
+                            parentMenuItem.classList.add('open'); // Add 'open' class to the parent menu item with submenu
+
+                            // Ensure all ancestors are open
+                            while (parentMenuItem) {
+                                if (parentMenuItem.classList.contains('menu-item')) {
+                                    parentMenuItem.classList.add('open');
+                                }
+                                parentMenuItem = parentMenuItem.parentNode.closest('.menu-item');
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+
+
+
+        <script>
+            let MasterImage1, MasterImage2, MasterName;
+
+            const defaultRun1 = async () => {
+                try {
+                    await Bind_UserProfile_Master();
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+
+
+            $(document).ready(function () {
+                MasterImage1 = $("#MasterImage1");
+                MasterImage2 = $("#MasterImage2");
+                MasterName = $("#MasterName");
+
+                (async function () {
+                    await Show_Spinner();
+                    await defaultRun1().finally(async () => {
+                        await Hide_Spinner();
+                    })
+                })();
+            })
+            async function Bind_UserProfile_Master() {
+                try {
+                    const response = await Ajax_GetResult_WithoutParameter("Setting_MyAccount.aspx", "Get_UserProfile");
+                    const data = JSON.parse(response.d);
+                    if (data.length > 0) {
+                        MasterName.html(data[0].Name);
+                        if (data[0].Image == null) {
+                            MasterImage1.attr("src", "../UserLogin_Content/upload/1.png");
+                            MasterImage2.attr("src", "../UserLogin_Content/upload/1.png");
+                        }
+                        else {
+                            MasterImage1.attr("src", "../UserLogin_Content/upload/" + data[0].Image);
+                            MasterImage2.attr("src", "../UserLogin_Content/upload/" + data[0].Image);
+                        }
+                    }
+                    else {
+                        MasterName.html("Your Name");
+                        MasterImage1.attr("src", "../UserLogin_Content/upload/1.png");
+                        MasterImage2.attr("src", "../UserLogin_Content/upload/1.png");
+                    }
+
+                } catch (err) {
+                    console.log(err);
+                }
+
+            }
+        </script>
+
+
+        <script>
+
+            async function Show_Spinner() {
+                return new Promise((resolve) => {
+                    $("#spinner-div").fadeIn(300, () => {
+                        resolve();
+                    });
+                });
+            }
+            async function Hide_Spinner() {
+                return new Promise((resolve) => {
+                    $("#spinner-div").fadeOut(300, () => {
+                        resolve();
+                    });
+                });
+            }
+            function NotifySuccess(response) {
+                $.notify(response, {
+                    globalPosition: "top center",
+                    className: "success notifyCss",
+                })
+            }
+            function NotifyFailed(response) {
+                $.notify(response, {
+                    globalPosition: "top center",
+                    className: "error notifyCss",
+                })
+            }
+            function NotifyWarning(response) {
+                $.notify(response, {
+                    globalPosition: "top center",
+                    className: "warn notifyCss",
+                })
+            }
+            function NotifySuccessAndReload(message, callback) {
+                NotifySuccess(message);
+
+                setTimeout(function () {
+                    callback();
+                }, 500);
+            }
+        </script>
+
+        <!-- Core JS -->
+        <!-- build:js ../UserLogin_Content/assets/vendor/js/core.js -->
+        <script src="../UserLogin_Content/assets/vendor/libs/jquery/jquery.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/popper/popper.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/js/bootstrap.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/node-waves/node-waves.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/hammer/hammer.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/i18n/i18n.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/typeahead-js/typeahead.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/js/menu.js"></script>
+
+        <!-- endbuild -->
+
+        <!-- Vendors JS -->
+        <script src="../UserLogin_Content/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/bootstrap-select/bootstrap-select.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/@form-validation/popular.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/@form-validation/bootstrap5.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/@form-validation/auto-focus.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/dropzone/dropzone.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/autosize/autosize.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/cleavejs/cleave.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/jquery-repeater/jquery-repeater.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/sweetalert2/sweetalert2.js?v=2"></script>
+        <script src="../UserLogin_Content/assets/vendor/libs/select2/select2.js"></script>
+
+        <!-- Main JS -->
+        <script src="../UserLogin_Content/assets/js/main.js"></script>
+
+        <!-- Page JS -->
+        <script src="../UserLogin_Content/assets/js/pages-auth.js"></script>
+
+        <!-- Page JS -->
+        <script src="../UserLogin_Content/assets/js/forms-selects.js"></script>
+        <script src="../UserLogin_Content/assets/js/forms-tagify.js"></script>
+        <script src="../UserLogin_Content/assets/js/forms-typeahead.js"></script>
+
+        <!-- Page JS -->
+        <script src="../UserLogin_Content/assets/js/modal-edit-user.js"></script>
+        <script src="../UserLogin_Content/assets/js/forms-file-upload.js"></script>
+        <script src="../UserLogin_Content/assets/js/forms-extras.js"></script>
+        <script src="../UserLogin_Content/assets/js/tables-datatables-basic.js"></script>
+
+
+
+        <!-- DataTables JS -->
+        <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+        <!-- DataTables Buttons JS -->
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+
+        <!-- DataTables Responsive JS -->
+        <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+
+        <!-- Datatable New Version End-->
+        <script src="../UserLogin_Content/Scripts/Ajax_Crud.js?v=5"></script>
+        <script src="../UserLogin_Content/Scripts/Upload_Mult_Image.js"></script>
+        <script src="../UserLogin_Content/Scripts/notify.min.js"></script>
+        <script src="../UserLogin_Content/Scripts/ValidatingAllInput.js?v=1"></script>
+        <script src="../UserLogin_Content/tinymce/js/tinymce/tinymce.min.js"></script>
+        <script src="../UserLogin_Content/Scripts/SweetAlert.js?v=5"></script>
+        <script> 
+            tinymce.init({
+                selector: '.TextEditor',
+                plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons',
+                menubar: 'file edit view insert format tools table help',
+                toolbar: 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
+                font_family_formats: 'Arial=arial,helvetica,sans-serif;Kurti Dev=Kruti Dev 010,Andale Mono=andale mono,monospace;Arial Black=arial black,sans-serif;Book Antiqua=book antiqua,palatino,serif;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier,monospace;Georgia=georgia,palatino,serif;Helvetica=helvetica,arial,sans-serif;Impact=impact,sans-serif;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco,monospace;Times New Roman=times new roman,times,serif;Trebuchet MS=trebuchet ms,geneva,sans-serif;Verdana=verdana,geneva,sans-serif;Webdings=webdings;Wingdings=wingdings,zapf dingbats',
+                toolbar_sticky: true,
+                autosave_ask_before_unload: true,
+                autosave_interval: '30s',
+                autosave_prefix: '{path}{query}-{id}-',
+                autosave_restore_when_empty: false,
+                autosave_retention: '2m',
+                image_advtab: true,
+                link_list: [
+                    { title: 'My page 1', value: 'https://www.codexworld.com' },
+                    { title: 'My page 2', value: 'http://www.codexqa.com' }
+                ],
+                image_list: [
+                    { title: 'My page 1', value: 'https://www.codexworld.com' },
+                    { title: 'My page 2', value: 'http://www.codexqa.com' }
+                ],
+                image_class_list: [
+                    { title: 'None', value: '' },
+                    { title: 'Some class', value: 'class-name' }
+                ],
+                importcss_append: true,
+                file_picker_callback: (callback, value, meta) => {
+                    /* Provide file and text for the link dialog */
+                    if (meta.filetype === 'file') {
+                        callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+                    }
+
+                    /* Provide image and alt text for the image dialog */
+                    if (meta.filetype === 'image') {
+                        callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+                    }
+
+                    /* Provide alternative source and posted for the media dialog */
+                    if (meta.filetype === 'media') {
+                        callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+                    }
+                },
+                templates: [
+                    { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
+                    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+                    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
+                ],
+                template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
+                template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
+                height: 400,
+                image_caption: true,
+                quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+                noneditable_class: 'mceNonEditable',
+                toolbar_mode: 'sliding',
+                contextmenu: 'link image table',
+                //content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+                content_css: "../font.css"
+            });
+        </script>
+
+
+    </form>
+</body>
+</html>
